@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sfondo_tasto_listview"
+        android:layout_gravity="top"
+        android:padding="5dip"
+        >
+
+
+	<ImageView
+		android:id="@+id/personImage"
+		android:layout_width="50dip"
+		android:layout_height="50dip"
+	>
+	</ImageView>
+	
+        <TextView
+                android:text="Nome"
+                android:layout_marginLeft="5dip"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/personName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:layout_toRightOf="@id/personImage"
+                android:layout_gravity="top"
+                ></TextView>
+                
+        <TextView
+                android:text="Descrizione"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#121212"
+                android:id="@+id/personSurname"
+                android:layout_alignLeft="@+id/nome"
+                android:layout_alignParentBottom="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/personName"
+                android:layout_marginLeft="5dip"
+                android:maxLines="3"
+                android:singleLine="false"
+                android:layout_toRightOf="@id/personImage"
+                android:layout_gravity="top"
+                ></TextView>        
+</RelativeLayout>

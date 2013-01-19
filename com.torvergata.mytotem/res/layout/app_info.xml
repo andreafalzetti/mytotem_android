@@ -1,0 +1,63 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:background="#008a63">
+         
+<RelativeLayout 
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="#008a63"
+>
+
+<LinearLayout
+	android:id="@+id/row0"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/top_logo_repeat"
+	android:gravity="center">
+	<ImageView
+		android:id="@+id/logo"
+		android:src="@drawable/logo"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:antialias="true"/>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row1"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:layout_below="@+id/row0">
+	
+	<Button
+	   android:id="@+id/btnGoSite"
+	   android:layout_width="fill_parent"
+	   android:layout_height="wrap_content"
+	   android:layout_margin="8dp"
+	   android:gravity="center"
+	   android:text="@string/sitoUfficiale"
+	   android:onClick="btnGO"
+	   android:clickable="true"
+	   android:background="@drawable/rettangolo"
+	 />
+	
+	<Button
+	   android:id="@+id/btnGoFBPage"
+	   android:layout_width="fill_parent"
+	   android:layout_height="wrap_content"
+	   android:layout_margin="8dp"
+	   android:gravity="center"
+	   android:text="@string/facebook"
+	   android:onClick="btnGO"
+	   android:clickable="true"
+	   android:background="@drawable/rettangolo"
+	 />
+</LinearLayout>
+
+
+	
+</RelativeLayout>
+</ScrollView>

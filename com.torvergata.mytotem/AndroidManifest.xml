@@ -1,0 +1,207 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.torvergata.mytotem"
+    android:versionCode="7"
+    android:versionName="2.2" >
+
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:required="false" android:name="android.permission.READ_PHONE_STATE"/>	
+	<uses-permission android:required="false" android:name="android.permission.CALL_PHONE" />
+	<uses-feature android:name="android.hardware.telephony" android:required="false"/>
+
+    
+    <uses-sdk
+        android:minSdkVersion="8"
+            />
+       <!-- android:targetSdkVersion="15" -->
+
+<supports-screens
+    android:anyDensity="true"
+    android:xlargeScreens="true"
+    android:largeScreens="true"
+    android:normalScreens="true"
+    android:smallScreens="true"/>
+	
+    <application
+        android:name="MyTotem"
+        android:icon="@drawable/ic_launcher"
+        android:label="Tor Vergata"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="com.google.android.maps" />                      
+                        
+        <activity
+            android:name="com.torvergata.mytotem.Home"
+            android:label="Tor Vergata">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         
+        <activity
+		    android:name="com.torvergata.mytotem.AppInfo"
+		    android:label="Informazioni App e Autore">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW"/>
+   			</intent-filter>
+		</activity> 
+		
+        <activity
+		    android:name="com.torvergata.mytotem.student.StudentLogin">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+		
+        <activity
+		    android:name="com.torvergata.mytotem.student.ProfiloStudente"
+		    android:label="Profilo personale">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+		
+        <activity
+		    android:name="com.torvergata.mytotem.OffertaDidattica"
+		    android:label="Offerta didattica 2012/2013 - Tor Vergata">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+				
+        <activity
+		    android:name="com.torvergata.mytotem.InformazioniUtili"
+		    android:label="Informazioni utili">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+	        
+        <activity
+		    android:name="com.torvergata.mytotem.student.EsamiVerbalizzati"
+		    android:label="Esami verbalizzati">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+  
+        <activity
+		    android:name="com.torvergata.mytotem.student.ReportEsame"
+		    android:label="Report esame">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+
+        <activity
+		    android:name="com.torvergata.mytotem.student.EsamiPrenotati"
+		    android:label="Esami prenotati">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+        
+        <activity
+		    android:name="com.torvergata.mytotem.student.DettaglioPrenotazione"
+		    android:label="Dettaglio prenotazione esame">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity>    
+		        
+        <activity
+		    android:name="com.torvergata.mytotem.student.DettagliPersonali"
+		    android:label="Informazioni personali">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+				        
+        <activity
+		    android:name="com.torvergata.mytotem.DettagliCorsoLaurea"
+		    android:label="Dettagli del corso di Laurea">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+		
+        <activity
+		    android:name="com.torvergata.mytotem.Annunci"
+		    android:label="Annunci tra studenti">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity>
+		
+        <activity
+		    android:name="com.torvergata.mytotem.Segreterie"
+		    android:label="Segreterie Università di Tor Vergata">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity>
+		
+        <activity
+		    android:name="com.torvergata.mytotem.DettagliSegreteria"
+		    android:label="Dettagli della segreteria">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 	
+			
+        <activity
+		    android:name="com.torvergata.mytotem.student.Rendimento"
+		    android:label="Il tuo rendimento"
+>
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+		
+                			
+        <activity
+		    android:name="com.torvergata.mytotem.student.Certificati"
+		    android:label="Richiesta certificati PDF">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+        
+                			
+        <activity
+		    android:name="com.torvergata.mytotem.Docenti"
+		    android:label="Elenco docenti">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+                			
+        <activity
+		    android:name="com.torvergata.mytotem.DidatticaWeb"
+		    android:label="Elenco corsi">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 		
+		
+		<activity
+		    android:name="com.torvergata.mytotem.student.CalendarioEsamiFilterSelection"
+		    android:label="Calendario Esami - Filtro">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+		
+		<activity
+		    android:name="com.torvergata.mytotem.student.CalendarioEsamiPanoramica"
+		    android:label="Calendario Esami">
+   			<intent-filter>
+       			<action android:name="android.intent.action.VIEW" />
+   			</intent-filter>
+		</activity> 
+        <activity android:name="com.google.ads.AdActivity"
+android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+    </application>
+
+</manifest>

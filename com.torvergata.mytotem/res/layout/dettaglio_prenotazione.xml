@@ -1,0 +1,227 @@
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:background="#008a63"
+         >
+         
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+android:background="#008a63"
+>
+
+<LinearLayout
+	android:id="@+id/row0"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/top_logo_repeat"
+	android:gravity="center">
+	<ImageView
+		android:id="@+id/logo"
+		android:src="@drawable/logo"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:antialias="true"/>
+</LinearLayout>
+<LinearLayout
+	android:id="@+id/row1"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_marginTop="10dp"
+	android:layout_below="@+id/row0"
+	android:background="#008a63">
+        <TextView
+        	android:id="@+id/nomeEsame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="Nome esame"
+            style="@style/titolo" />
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row2"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="left"
+	android:layout_margin="15dp"
+	android:layout_below="@+id/row1"
+	android:orientation="vertical"
+	android:background="#008a63">
+        <TextView
+        	android:id="@+id/dataEsame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="GG/MM/AAAA"
+            style="@style/whiteMed" />
+        <TextView
+        	android:id="@+id/docente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="ALESSANDRA D'EPIFANIO"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/orario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="14:00"
+            style="@style/whiteMed" /> 
+        <TextView
+        	android:id="@+id/modalita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="SCRITTO"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/edificio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="DIDATTICA"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/aula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="A1 e A3"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/stato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="si/no"
+            style="@style/whiteMed" />  
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row3"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_marginRight="15dp"
+	android:layout_marginLeft="15dp"
+	android:layout_below="@+id/row2"
+	android:background="@drawable/rettangolo">
+	        <TextView
+        	android:id="@+id/buttonDettagli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:gravity="left"
+            android:text="Dettagli prenotazione"
+            style="@style/blackSmall"
+             />
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row4"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="left"
+	android:layout_margin="15dp"
+	android:layout_below="@+id/row3"
+	android:orientation="vertical"
+	android:background="#008a63">
+        <TextView
+        	android:id="@+id/appello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="I"
+            style="@style/whiteMed" />
+        <TextView
+        	android:id="@+id/inizio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="gg/mm/aaaa"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/fine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="gg/mm/aaaa"
+            style="@style/whiteMed" /> 
+        <TextView
+        	android:id="@+id/attiva"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="attiva/disattiva"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/ciclo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="AUTUNNALE"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/aa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="aaaa/aaaa"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/tipologia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="ESAME FINALE"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/numPrenotati"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="N su M"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="000000"
+            style="@style/whiteMed" /> 
+        <TextView
+        	android:id="@+id/comunicazioni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:gravity="left"
+            android:text="Per partecipare all'esame è necessario consegnare l'esercizio di programmazione le cui modalità di consegna e svolgimento sono state pubblicate sulle pagine del corso del sito DidatticaWeb.   "
+            style="@style/whiteMed" /> 
+</LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

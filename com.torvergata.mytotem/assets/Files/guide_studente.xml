@@ -1,0 +1,49 @@
+<mytotem>
+   <guida>
+      <nome>Guida dello Studente (Economia)</nome>
+      <dimensione>1.9 MB</dimensione>
+      <filename>guida_economia.pdf</filename>
+      <url>http://mytotem.torengine.it/appcontents/pdf/guida_economia.pdf</url>
+      <type>pdf</type>
+   </guida>
+   
+   <guida>
+      <nome>Guida dello Studente (Lettere e Filosofia)</nome>
+      <dimensione></dimensione>
+      <filename></filename>
+      <url>http://guida.lettere.uniroma2.it</url>
+      <type>url</type>
+   </guida>
+   
+   <guida>
+      <nome>Guida dello Studente (Giurisprudenza)</nome>
+      <dimensione>741 kB</dimensione>
+      <filename>guida_juris.pdf</filename>
+      <url>http://mytotem.torengine.it/appcontents/pdf/guida_juris.pdf</url>
+      <type>pdf</type>
+   </guida>
+   
+   <guida>
+      <nome>Guida dello Studente (Ingegneria)</nome>
+      <dimensione>733 kB</dimensione>
+      <filename>guida_ingegneria.pdf</filename>
+      <url>http://mytotem.torengine.it/appcontents/pdf/guida_ingegneria.pdf</url>
+      <type>pdf</type>
+   </guida>
+   
+   <guida>
+      <nome>Guida dello Studente (Medicina e Chilurgia)</nome>
+      <dimensione>2.9 MB</dimensione>
+      <filename>guida_medicina.pdf</filename>
+      <url>http://mytotem.torengine.it/appcontents/pdf/guida_medicina.pdf</url>
+      <type>pdf</type>
+   </guida>
+   
+   <guida>
+      <nome>Guida dello Studente (Scienze - Informatica Triennale)</nome>
+      <dimensione>180 kB</dimensione>
+      <filename>guida_informatica.pdf</filename>
+      <url>http://mytotem.torengine.it/appcontents/pdf/guida_informatica.pdf</url>
+      <type>pdf</type>
+   </guida>
+</mytotem>

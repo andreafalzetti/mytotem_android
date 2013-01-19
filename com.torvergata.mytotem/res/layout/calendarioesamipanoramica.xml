@@ -1,0 +1,96 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:background="#008a63">
+         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#008a63" >
+
+<LinearLayout
+	android:id="@+id/row0"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/top_logo_repeat"
+	android:gravity="center">
+	<ImageView
+		android:id="@+id/logo"
+		android:src="@drawable/logo"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:antialias="true"/>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row1"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_marginTop="10dp"
+	android:layout_below="@+id/row0"
+	android:background="#008a63"
+	android:orientation="vertical" >
+	        <TextView
+        	android:id="@+id/nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="Calendario Esami"
+            style="@style/titolo" />
+	        <TextView
+        	android:id="@+id/descrizione"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="10dp"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="Anno AAAA/AAAA - Lettera \'_\'"
+            style="@style/blackSmall" />         
+
+    />
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/row2"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/row1"
+    android:layout_marginTop="10dp"
+    android:background="#008a63"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row3"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:layout_below="@+id/row2">
+	
+ <ListView android:layout_width="fill_parent"   
+      android:layout_height="fill_parent"   
+      android:id="@+id/mainListView"
+      android:layout_weight="1"
+      ></ListView> 
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/rowAD"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_below="@+id/row3"
+	android:background="#008a63"
+	>
+</LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

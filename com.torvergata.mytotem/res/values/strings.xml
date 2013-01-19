@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">MyTotem</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_login">Login</string>
+    <string name="facebook">Seguici su Facebook!</string>
+    <string name="sitoUfficiale">Sito Ufficiale</string>
+
+	<string name="hello">MainActivity</string>
+ 
+    <string name="phone">Phone</string>
+    <string name="computer">Computer</string>
+    <string name="gamepad">Gamepad</string> 
+    <string name="camera">Camera</string>
+    <string name="video">Video</string>
+    <string name="email">EMail</string>
+ 
+</resources>

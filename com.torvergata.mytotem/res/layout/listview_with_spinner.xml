@@ -1,0 +1,55 @@
+<RelativeLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="vertical" 
+ android:background="#008a63"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent">
+ 
+<LinearLayout
+	android:id="@+id/row0"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/top_logo_repeat"
+	android:gravity="center">
+	<ImageView
+		android:id="@+id/logo"
+		android:src="@drawable/logo"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:antialias="true"/>
+</LinearLayout>
+
+
+<LinearLayout
+	android:id="@+id/row0_1"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:layout_marginLeft="5dp"
+	android:layout_marginRight="5dp"
+	android:layout_marginTop="5dp"
+	android:layout_below="@+id/row0">
+	<Spinner
+		android:id="@+id/spinnerAlfabeto"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone">
+	</Spinner>
+ </LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row1"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:layout_below="@+id/row0_1">
+	
+ <ListView android:layout_width="fill_parent"   
+      android:layout_height="fill_parent"   
+      android:id="@+id/mainListView"
+      android:layout_weight="1"
+      ></ListView> 
+</LinearLayout>
+</RelativeLayout>

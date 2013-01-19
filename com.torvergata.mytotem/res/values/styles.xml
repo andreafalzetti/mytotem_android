@@ -1,0 +1,6 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Light" />
+    <color name="verdeTorVergata_1">#008A63</color>
+    <color name="verdeTorVergata_2">#3B8D69</color>
+</resources>

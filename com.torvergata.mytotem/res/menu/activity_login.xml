@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/login"
+        android:title="Login"
+        android:icon="@drawable/ic_menu_start"
+        android:orderInCategory="100" />
+        
+    <item android:id="@+id/logout"
+    	android:icon="@drawable/ic_menu_stop"
+        android:title="Logout"
+        android:orderInCategory="100" />
+        
+    <item android:id="@+id/aggiorna"
+        android:title="Aggiorna contenuti"
+        android:icon="@drawable/ic_menu_aggiorna"
+        android:orderInCategory="100" /> 
+              
+    <item android:id="@+id/info"
+        android:title="Info"
+        android:icon="@drawable/ic_menu_info"
+        android:orderInCategory="100" />  
+</menu>

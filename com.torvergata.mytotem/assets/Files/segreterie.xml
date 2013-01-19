@@ -1,0 +1,585 @@
+<torvergata>
+   <facolta>
+      <totsegreterie>8</totsegreterie>
+      <nome>Economia</nome>
+      <segreteria>
+         <nome>Segreteria Studenti (Economia)</nome>
+         <orario>
+Lunedì 9.00 - 12.00
+Mercoledì 9.00 - 12.00 e 14.00 - 16.00
+Venerdì 9.00 -12.00.</orario>
+         <tel1>06 7259 5917</tel1>
+         <tel2>06 7259 5836</tel2>
+         <tel3>06 7259 5839</tel3>
+         <tel4>06 7259 5531</tel4>
+         <fax>06 7259 5844</fax>
+         <email>vincenzo.parisi@uniroma2.it</email>
+         <responsabile>Sig. Vincenzo Parisi</responsabile>
+         <indirizzo>
+Facoltà di Economia
+Via Columbia, 2
+00133 Roma</indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria Erasmus (Economia)</nome>
+         <orario>
+Lunedì 10:00 - 12:00
+Mercoledì 10:00 - 12:00 e 14:30 - 16:00
+Venerdì 10:00 -12:00</orario>
+         <tel1>06 7259 5507</tel1>
+         <tel2>06 7259 5752</tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5541</fax>
+         <email>petrini@economia.uniroma2.it</email>
+         <responsabile>Dott.ssa Susanna Petrini</responsabile>
+         <indirizzo>
+Facoltà di Economia,
+Via Columbia, 2
+00133 Roma
+presso l’edificio B
+piano terra</indirizzo>
+      </segreteria>   
+
+      <segreteria>
+         <nome>Segreteria di Presidenza (Economia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5501</tel1>
+         <tel2>06 7259 5502</tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5504</fax>
+         <email>Dott.ssa Simona Vigoni</email>
+         <responsabile>Dott.ssa Simona Vigoni</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>  
+
+      <segreteria>
+         <nome>Segreteria Particolare (Economia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5533</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5504</fax>
+         <email>porinelli@economia.uniroma2.it</email>
+         <responsabile>Sig.ra Michela Porinelli</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>   
+
+      <segreteria>
+         <nome>Area Comunicazione, Stampa, Orientamento (Economia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5522</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5504</fax>
+         <email>pattuglia@economia.uniroma2.it</email>
+         <responsabile>Dott.ssa Simonetta Pattuglia</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria> 
+   
+      <segreteria>
+         <nome>Settore Laureati-Desk Imprese (Economia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5503</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5504</fax>
+         <email>gelosia@economia.uniroma2.it</email>
+         <responsabile>Dott.ssa Francesca Romana Gelosia</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria> 
+    
+      <segreteria>
+         <nome>Informazioni Studenti (Economia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5513</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>bernabef@uniroma2.it</email>
+         <responsabile>Sig. Feliciano Bernabei</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>  
+   
+      <segreteria>
+         <nome>Biblioteca (Economia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5524</tel1>
+         <tel2>06 7259 5527</tel2>
+         <tel3>06 7259 5529</tel3>
+         <tel4>06 7259 5530</tel4>
+         <fax>062040236</fax>
+         <email>coppola@economia.uniroma2.it</email>
+         <responsabile>Sig. Feliciano Bernabei</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria> 
+   </facolta>
+ 
+   <facolta>
+      <totsegreterie>9</totsegreterie>
+      <nome>Lettere e Filosofia</nome>
+      <segreteria>
+         <nome>Segreteria Studenti (Lettere e Filosofia)</nome>
+         <orario>
+Lunedì 9.00 - 12.00
+Mercoledì 9.00 - 12.00 e 15.00 - 17.00
+Venerdì 9.00 -12.00.</orario>
+         <tel1>06 7259 5183</tel1>
+         <tel2>06 7259 5204</tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259.5126</fax>
+         <email>laura.ciccarelli@uniroma2.it</email>
+         <responsabile>Dott.ssa Laura Ciccarelli</responsabile>
+         <indirizzo>
+Facoltà di Lettere e Filosofia
+Via Columbia, 1
+00133 Roma</indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria di Presidenza (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5168</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>062023571</fax>
+         <email>michela.guglielmi@uniroma2.it</email>
+         <responsabile>Dott.ssa Michela Guglielmi</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria Studenti Stranieri (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5187</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>erasmus@lettere.uniroma2.it</email>
+         <responsabile>Dott.ssa Giuseppina Grimaldi</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria Erasmus - Stage (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5239</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5219</fax>
+         <email>de.angelis@lettere.uniroma2.it</email>
+         <responsabile>Dott.ssa Simona De Angelis</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Ufficio Gestione Didattica (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5231</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5054</fax>
+         <email>garofalo@lettere.uniroma2.it</email>
+         <responsabile>Sig.ra Stefania Garofalo</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Ufficio Gestione Eventi (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5113</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5209</fax>
+         <email>eventi@lettere.uniroma2.it</email>
+         <responsabile>Dott.ssa M. Carla Di Maria</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Ufficio Relazioni esterne (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5113</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 5209</fax>
+         <email>Rel.Esterne@lettere.uniroma2.it</email>
+         <responsabile>Dott.ssa M. Carla Di Maria</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Ufficio Orientamento Studenti (Lettere e Filosofia)</nome>
+         <orario>
+Dal lunedì al venerdì
+dalle ore 10 alle ore 13
+dalle 14 alle 17.</orario>
+         <tel1>06 7259 5248</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>orientamento@lettere.uniroma2.it</email>
+         <responsabile></responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+
+      <segreteria>
+         <nome>Biblioteca (Lettere e Filosofia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5226</tel1>
+         <tel2>06 7259 5147</tel2>
+         <tel3>06 7259 5176</tel3>
+         <tel4></tel4>
+         <fax>06 7259 5178</fax>
+         <email>lettere@biblio.uniroma2.it</email>
+         <responsabile>Dott.ssa Maria C. Violante</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+   </facolta> 
+   
+   <facolta>
+      <totsegreterie>5</totsegreterie>
+      <nome>Giurisprudenza</nome>
+      <segreteria>
+         <nome>Segreteria Studenti (Giurisprudenza)</nome>
+         <orario>
+Lunedì 9.00 - 12.00
+Mercoledì 9.00 - 12.00 e 14.00 - 16.00
+Venerdì 9.00 -12.00.</orario>
+         <tel1>06 7259 2345</tel1>
+         <tel2>06 7259 2044</tel2>
+         <tel3>06 7259 2549</tel3>
+         <tel4></tel4>
+         <tel5></tel5>
+         <fax>06 7259.3055</fax>
+         <email>ceccomarini@amm.uniroma2.it</email>
+         <responsabile>Sig.ra Simonetta Ceccomarini</responsabile>
+         <indirizzo>
+Facoltà di Giurisprudenza
+Via Orazio Raimondo, 18
+00173 Roma</indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria Didattica (Giurisprudenza)</nome>
+         <orario></orario>
+         <tel1>06 7259 2767</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>fabio.de.petrillo@uniroma2.it</email>
+         <responsabile>Dott. Fabio De Petrillo</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Biblioteca (Giurisprudenza)</nome>
+         <orario></orario>
+         <tel1>06 7259 2119</tel1>
+         <tel2>06 7259 2121</tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 2116</fax>
+         <email>perugini@biblio.uniroma2.it</email>
+         <responsabile>Dott.ssa Rita Perugini</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria di Presidenza (Giurisprudenza)</nome>
+         <orario></orario>
+         <tel1>06 7259 2356</tel1>
+         <tel2>06 7259 2765</tel2>
+         <tel3>06 7259 2766</tel3>
+         <tel4>06 7259 2767</tel4>
+         <fax>06 7236103</fax>
+         <email>presidenza@juris.uniroma2.it</email>
+         <responsabile>Sig.ra Maria Luisa Strippoli</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria Particolare (Giurisprudenza)</nome>
+         <orario></orario>
+         <tel1>06 7259 2600</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7236103</fax>
+         <email></email>
+         <responsabile>Dott.ssa Maria Virginia Cherra</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+   </facolta> 
+
+   <facolta>
+      <totsegreterie>5</totsegreterie>
+      <nome>Ingegneria</nome>
+      <segreteria>
+         <nome>Segreteria Studenti (Ingegneria)</nome>
+         <orario>
+Lunedì 9.00 - 12.00
+Mercoledì 9.00 - 12.00 e 15.00 - 17.00
+Venerdì 9.00 -12.00.</orario>
+         <tel1>06 7259 7599</tel1>
+         <tel2>06 7259 7253</tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 7598</fax>
+         <email>emanuela.dimaulo@uniroma2.it</email>
+         <responsabile>Sig.ra Emanuela Di Maulo</responsabile>
+         <indirizzo>
+Facoltà di Ingegneria
+Via del Politecnico 1
+00133 Roma</indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria di Presidenza (Ingegneria)</nome>
+         <orario></orario>
+         <tel1>06 7259 7118</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 7116</fax>
+         <email>melai@ing.uniroma2.it</email>
+         <responsabile>Sig.ra Marina Melai</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Coordinamento e organizzazione didattica (Ingegneria)</nome>
+         <orario></orario>
+         <tel1>06 7259 7117</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 7116</fax>
+         <email>sarchioni@ing.uniroma2.it</email>
+         <responsabile>Sig.ra Fiorella Sarchioni</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Laureati-Desk Imprese e Servizi Studenti (Ingegneria)</nome>
+         <orario></orario>
+         <tel1>06 7259 7281</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>santamaria@ing.uniroma2.it</email>
+         <responsabile>Sig.ra Silvana Santamaria</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Biblioteca (Ingegneria)</nome>
+         <orario></orario>
+         <tel1>06 7259 7109</tel1>
+         <tel2>06 7259 7108</tel2>
+         <tel3>06 7259 7106</tel3>
+         <tel4></tel4>
+         <fax>06 7259 7109</fax>
+         <email>luisa.chiodetti@uniroma2.it</email>
+         <responsabile>Sig.ra Luisa Chiodetti</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+   </facolta> 
+   
+   <facolta>
+      <totsegreterie>5</totsegreterie>
+      <nome>Medicina e Chirurgia</nome>
+      <segreteria>
+         <nome>Segreteria Studenti (Medica)</nome>
+         <orario>
+         Lunedì 9.00 - 12.00
+                 Mercoledì 9.00 - 12.00 e 14.00 - 16.00
+                 Venerdì 9.00 -12.00.</orario>
+         <tel1>06 7259 6044</tel1>
+         <tel2>06 7259 6964</tel2>
+         <tel3>06 7259 6043</tel3>
+         <tel4>06 7259 6045</tel4>
+         <fax>06 7259 6914</fax>
+         <email>maria.gargani@uniroma2.it</email>
+         <responsabile></responsabile>
+         <indirizzo>
+Facoltà di Medicina e Chirurgia
+Via Montpellier, 1
+00133 Roma</indirizzo>
+      </segreteria>
+      
+      <segreteria>
+         <nome>Segreteria Studenti (Sanitaria)</nome>
+         <orario>Lunedì 9.00 - 12.00
+                 Mercoledì 9.00 - 12.00 e 14.00 - 16.00
+                 Venerdì 9.00 -12.00</orario>
+         <tel1>06 7259 6965</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 7259 6915</fax>
+         <email>leonilde.valente@uniroma2.it</email>
+         <responsabile>Sig.ra Leonilde Valente</responsabile>
+         <indirizzo>
+Facoltà di Medicina e Chirurgia
+Via Montpellier, 1
+00133 Roma</indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria di Presidenza (Medicina e Chilurgia)</nome>
+         <orario></orario>
+         <tel1>06 2020301</tel1>
+         <tel2>06 2020064</tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax>06 2025485</fax>
+         <email>presidenza@med.uniroma2.it</email>
+         <responsabile>Dott.ssa Manuela Misiano</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Segreteria Informazioni (Medicina e Chilurgia)</nome>
+         <orario></orario>
+         <tel1>06 7231941</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email></email>
+         <responsabile>Ufficio Chiama Tor Vergata</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+
+      <segreteria>
+         <nome>Biblioteca (Medicina e Chilurgia)</nome>
+         <orario></orario>
+         <tel1>06 7259 5414</tel1>
+         <tel2>06 7259 5415</tel2>
+         <tel3>06 7259 5416</tel3>
+         <tel4>06 7259 5417</tel4>
+         <fax>06 7259 5421</fax>
+         <email>mazzitelli@biblio.uniroma2.it</email>
+         <responsabile>Dott. Gabriele Mazzitelli</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+   </facolta>   
+   
+   <facolta>
+      <totsegreterie>6</totsegreterie>
+      <nome>Scienze MM.FF.NN</nome>
+      <segreteria>
+         <nome>Segreteria Studenti (Scienze)</nome>
+         <orario>
+Lunedì 9.00 - 12.00
+Mercoledì 9.00 - 12.00 e 15.00 - 17.00
+Venerdì 9.00 -12.00</orario>
+         <tel1>06 7259 4831</tel1>
+         <tel2>06 7259 4832</tel2>
+         <tel3>06 7259 4892</tel3>
+         <tel4>06 7259 4893</tel4>
+         <fax>06 7259 4830</fax>
+         <email>dellatorre@uniroma2.it</email>
+         <responsabile>Sig. Roberto Della Torre</responsabile>
+         <indirizzo>
+Facoltà di Scienze Matematiche, Fisiche e Naturali
+Via della Ricerca Scientifica, 1
+00133 Roma</indirizzo>
+      </segreteria>
+      
+      <segreteria>
+         <nome>Segreteria Didattica (Biologia)</nome>
+         <orario>
+Lunedì 10:00 - 12:00
+Mercoledì 14:00 - 15:30
+Venerdì 10:00 -12:00</orario>
+         <tel1>06 7259 4806</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>anna.garofalo@uniroma2.it</email>
+         <responsabile>Anna Garofalo</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>   
+         
+      <segreteria>
+         <nome>Segreteria Didattica (Area Chimica)</nome>
+         <orario>
+Lunedì 10:00 - 12:00
+Mercoledì 14:00 - 15:30
+Venerdì 10:00 -12:00</orario>
+         <tel1>06 7259 4808</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>mara.coppola@uniroma2.it</email>
+         <responsabile>Mara Coppola</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>
+         
+      <segreteria>
+         <nome>Segreteria Didattica (Area Fisica)</nome>
+         <orario>
+Lunedì 10:00 - 12:00
+Mercoledì 14:00 - 15:30
+Venerdì 10:00 -12:00</orario>
+         <tel1>06 7259 4849</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>samanta.marianelli@uniroma2.it</email>
+         <responsabile>Samanta Marianelli</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>   
+         
+      <segreteria>
+         <nome>Segreteria Erasmus (Scienze)</nome>
+         <orario>
+Lunedì 10:00 - 12:00
+Mercoledì 14:00 - 15:30
+Venerdì 10:00 -12:00</orario>
+         <tel1>06 7259 4471</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>laura.calconi@uniroma2.it</email>
+         <responsabile>Laura Calconi</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria>   
+      
+      <segreteria>
+         <nome>Segreteria di Presidenza (Scienze)</nome>
+         <orario></orario>
+         <tel1>06 7259 4100</tel1>
+         <tel2></tel2>
+         <tel3></tel3>
+         <tel4></tel4>
+         <fax></fax>
+         <email>desy.catena@uniroma2.it</email>
+         <responsabile>Desy Catena</responsabile>
+         <indirizzo></indirizzo>
+      </segreteria> 
+   </facolta>  
+</torvergata>

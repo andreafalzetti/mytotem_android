@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dip">
+
+        <TextView
+                android:text="Nome"
+                android:layout_marginLeft="5dip"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/nome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#2a4ca3"
+                ></TextView>
+                
+        <TextView
+                android:text="Descrizione"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#000000"
+                android:id="@+id/descrizione"
+                android:layout_alignLeft="@+id/nome"
+                android:layout_alignParentBottom="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nome"
+                android:maxLines="3"
+                android:singleLine="false"
+                ></TextView>        
+</RelativeLayout>

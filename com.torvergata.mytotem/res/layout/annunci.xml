@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+         android:layout_width="fill_parent"
+         android:layout_height="fill_parent"
+         android:background="#008a63"
+         >
+<RelativeLayout 
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ android:orientation="vertical" 
+ android:background="#008a63"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent">
+
+	
+<LinearLayout
+	android:id="@+id/row0"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center">
+	<ImageView
+		android:id="@+id/logo"
+		android:src="@drawable/mytotem_logo"
+	    android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:antialias="true"/>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row1"
+	android:layout_below="@+id/row0"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_margin="10dp"
+	android:background="#008a63">
+
+	<TextView
+		android:id="@+id/titolo"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		style="@style/titolo"
+		android:text="Annunci 4 Studenti"
+	></TextView>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row2"
+	android:layout_below="@+id/row1"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_margin="10dp"
+	android:background="#008a63"
+	android:orientation="horizontal">
+	
+	<EditText
+		android:id="@+id/txtCerca"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:text=""
+		android:onClick="svuota"
+		style="@style/blackSmall"
+		android:maxLines="2"
+	></EditText>
+	<Button
+		android:id="@+id/btnCerca"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		style="@style/titoloSmall"
+		android:text="Cerca!"
+	></Button>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row3"
+	android:layout_below="@+id/row2"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center"
+	android:layout_margin="10dp"
+	android:background="#008a63">
+	
+	<Button
+		android:id="@+id/btnInsert"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:onClick="inserisciAnnuncioShowForm"
+		android:background="@drawable/bottone_arancione"
+		style="@style/orangeSmall"
+		android:text="Inserisci il tuo annuncio"
+	></Button>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row3_hidden"
+	android:layout_below="@+id/row3"
+	android:layout_width="fill_parent"
+	android:layout_height="0dp"
+	android:layout_marginRight="10dp"
+	android:layout_marginLeft="10dp"
+	android:gravity="center"
+	android:layout_margin="0dp"
+	android:background="@drawable/sfondo_ad"
+	android:orientation="vertical">
+	<Spinner
+		android:id="@+id/spinnerCategoria"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+	</Spinner>
+	<Spinner
+		android:id="@+id/spinnerMode"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+	</Spinner>
+	<EditText
+		android:id="@+id/ad_titolo"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Titolo: "
+		android:onClick="svuota"
+		style="@style/blackSmall"
+		android:maxLines="3"
+		/>
+	<EditText
+		android:id="@+id/ad_messaggio"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Testo annuncio: "
+		android:onClick="svuota"
+		style="@style/blackSmall"
+		android:maxLines="5"
+		/>
+	<EditText
+		android:id="@+id/ad_contatto"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Telefono / Email: "
+		android:onClick="svuota"
+		style="@style/blackSmall"
+		android:maxLines="3"
+		/>
+	<Button
+		android:id="@+id/ad_save"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:onClick="ad_continua"
+		android:background="@drawable/bottone_arancione"
+		style="@style/orangeSmall"
+		android:text="Continua"
+	></Button>
+</LinearLayout>
+
+<LinearLayout
+	android:id="@+id/row4"
+	android:layout_below="@+id/row3_hidden"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="10dp"
+	android:gravity="center"
+	android:background="@drawable/rettangolo"
+	>
+	
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="6dp"
+		android:gravity="center"
+		style="@style/blackMed"
+		android:text="Apri annunci per categoria">
+	</TextView>
+	<Spinner
+		android:layout_below="@+id/categorie"
+		android:id="@+id/spinner"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Scegli una categoria">
+	</Spinner>
+</LinearLayout>
+
+</RelativeLayout>
+</ScrollView>
