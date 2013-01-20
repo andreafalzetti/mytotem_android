@@ -136,13 +136,13 @@ public class MyTotem extends Application {
 	private boolean logged;
 	
 	// Offerta formativa
-	private String[][] OF_facoltà;
+	private String[][] OF_facolta;
 	
 	// Segreterie
-	private String[][] SEG_facoltà;
+	private String[][] SEG_facolta;
 	private String[][] SEG_segreterie;
 	
-	// Totale di corsi per ogni facoltà
+	// Totale di corsi per ogni facolta
 	private int totcorsi;
 	private String OF_corsi[][];
 	
@@ -303,22 +303,22 @@ public class MyTotem extends Application {
 	public int getColonneEsami() { return colonneCampiEsame; }
 	public String[] getFacolta()
 	{
-		if(debug) Log.v("Debuggo", "Dimensione matrice facoltà = " + OF_facoltà.length);
-		String res[] = new String[OF_facoltà.length];
+		if(debug) Log.v("Debuggo", "Dimensione matrice facolta = " + OF_facolta.length);
+		String res[] = new String[OF_facolta.length];
 		for(int i=0; i<res.length; i++)
 		{
-			res[i] = OF_facoltà[i][0];
+			res[i] = OF_facolta[i][0];
 		}
 		return res;		
 	}
 	
 	public String[] getSEGFacolta()
 	{
-		if(debug) Log.v("Debuggo", "Dimensione matrice SEGfacoltà = " + SEG_facoltà.length);
-		String res[] = new String[SEG_facoltà.length];
+		if(debug) Log.v("Debuggo", "Dimensione matrice SEGfacolta = " + SEG_facolta.length);
+		String res[] = new String[SEG_facolta.length];
 		for(int i=0; i<res.length; i++)
 		{
-			res[i] = SEG_facoltà[i][0];
+			res[i] = SEG_facolta[i][0];
 		}
 		return res;		
 	}
@@ -328,7 +328,7 @@ public class MyTotem extends Application {
 		int colonna = 0;
 		if(campo.equals("nome")) colonna = 0;
 		else if(campo.equals("totcorsi")) colonna = 1;
-		return OF_facoltà[f][colonna];
+		return OF_facolta[f][colonna];
 	}
 	
 	public String getSEGFacoltaInfo(int f, String campo)
@@ -336,7 +336,7 @@ public class MyTotem extends Application {
 		int colonna = 0;
 		if(campo.equals("nome")) colonna = 0;
 		else if(campo.equals("totsegreterie")) colonna = 1;
-		return SEG_facoltà[f][colonna];
+		return SEG_facolta[f][colonna];
 	}
 	
 	public int getNumCampiCorso()
@@ -494,7 +494,7 @@ public class MyTotem extends Application {
 	{
 		// facolta è l'indice di riga della matrice OF_facolta.
 		// La seconda colonna di OF_facolta e' il numero di corsi che ha quella facolta.
-		// In base alla facolta' richiesta devo trovare il range esatto e restituire un vettore dei soli corsi di quella facoltà.
+		// In base alla facolta' richiesta devo trovare il range esatto e restituire un vettore dei soli corsi di quella facolta.
 		int counter = 0;
 		
 		int dim_corsi = Integer.parseInt(getFacoltaInfo(facolta, "totcorsi")); // numero di corsi che dovrò raccogliere
@@ -502,7 +502,7 @@ public class MyTotem extends Application {
 		String res[] = new String[dim_corsi];
 		for(int i=0; i<facolta; i++)
 		{
-			counter += Integer.parseInt(getFacoltaInfo(i, "totcorsi")); // sommo il numero di corsi di tutte le facoltà precedenti
+			counter += Integer.parseInt(getFacoltaInfo(i, "totcorsi")); // sommo il numero di corsi di tutte le facolta precedenti
 		}
 		int k = 0;
 		if(debug) Log.v("CORSI", "TOTALE CORSI: " + OF_corsi.length);
@@ -525,7 +525,7 @@ public class MyTotem extends Application {
 		String res[] = new String[dim_corsi];
 		for(int i=0; i<facolta; i++)
 		{
-			counter += Integer.parseInt(getSEGFacoltaInfo(i, "totsegreterie")); // sommo il numero di corsi di tutte le facoltà precedenti
+			counter += Integer.parseInt(getSEGFacoltaInfo(i, "totsegreterie")); // sommo il numero di corsi di tutte le facolta precedenti
 		}
 		int k = 0;
 		if(debug) Log.v("CORSI", "TOTALE Segreterie: " + SEG_segreterie.length);
@@ -716,20 +716,20 @@ public class MyTotem extends Application {
             DocumentBuilder db = factory.newDocumentBuilder();
             Document doc = db.parse(is); 
             
-            NodeList facoltà = doc.getElementsByTagName("facolta");
+            NodeList facolta = doc.getElementsByTagName("facolta");
             
-            int dim_facoltà = facoltà.getLength();
+            int dim_facolta = facolta.getLength();
             
-            if(debug)Log.v("Parsing-OffertaDidattica", "Numero di facoltà: " + dim_facoltà);
+            if(debug)Log.v("Parsing-OffertaDidattica", "Numero di facolta: " + dim_facolta);
             
-            OF_facoltà = new String[dim_facoltà][nomiNodiOF.length];
-            for (int i = 0; i < dim_facoltà; i++)
+            OF_facolta = new String[dim_facolta][nomiNodiOF.length];
+            for (int i = 0; i < dim_facolta; i++)
             {
             	for(int j=0; j<nomiNodiOF.length; j++)
-            		OF_facoltà[i][j] = getNodeValue(facoltà, i, nomiNodiOF[j]);
+            		OF_facolta[i][j] = getNodeValue(facolta, i, nomiNodiOF[j]);
             }  
             
-            // Per ogni facoltà cerco i suoi corsi
+            // Per ogni facolta cerco i suoi corsi
             NodeList corsi = doc.getElementsByTagName("corso");
             int dim_corsi = corsi.getLength();
             //Log.v("DIM CORSI", "Numeri di campi per corso = " + nomiNodiOFcorsi.length);
@@ -759,20 +759,20 @@ public class MyTotem extends Application {
             DocumentBuilder db = factory.newDocumentBuilder();
             Document doc = db.parse(is); 
             
-            NodeList facoltà = doc.getElementsByTagName("facolta");
+            NodeList facolta = doc.getElementsByTagName("facolta");
             
-            int dim_facoltà = facoltà.getLength();
+            int dim_facolta = facolta.getLength();
             
-            if(debug)Log.v("Parsing-Segreterie", "Numero di facoltà (seg): " + dim_facoltà);
+            if(debug)Log.v("Parsing-Segreterie", "Numero di facolta (seg): " + dim_facolta);
             
-            SEG_facoltà = new String[dim_facoltà][nomiNodiSEG_facolta.length];
-            for (int i = 0; i < dim_facoltà; i++)
+            SEG_facolta = new String[dim_facolta][nomiNodiSEG_facolta.length];
+            for (int i = 0; i < dim_facolta; i++)
             {
             	for(int j=0; j<nomiNodiSEG_facolta.length; j++)
-            		SEG_facoltà[i][j] = getNodeValue(facoltà, i, nomiNodiSEG_facolta[j]);
+            		SEG_facolta[i][j] = getNodeValue(facolta, i, nomiNodiSEG_facolta[j]);
             }  
             
-            // Per ogni facoltà cerco i suoi corsi
+            // Per ogni facolta cerco i suoi corsi
             NodeList segreterie = doc.getElementsByTagName("segreteria");
             int dim_corsi = segreterie.getLength();
             SEG_segreterie = new String[dim_corsi][nomiNodiSegreterie.length];
@@ -1197,12 +1197,12 @@ public class MyTotem extends Application {
     	return url;
     }
         
-    public String getURLElencoCorsi(String facoltà, boolean all)
+    public String getURLElencoCorsi(String facolta, boolean all)
     {
     	if(!all)
-    		return (String) elencoCorsi.get(facoltà);
+    		return (String) elencoCorsi.get(facolta);
     	else
-    		return (String) elencoCorsi.get(facoltà+"-all");
+    		return (String) elencoCorsi.get(facolta+"-all");
     }
     
     public boolean isTabletDevice(Context activityContext) {

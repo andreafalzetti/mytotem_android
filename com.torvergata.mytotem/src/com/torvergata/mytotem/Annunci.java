@@ -69,10 +69,10 @@ public class Annunci extends Activity implements AdapterView.OnItemSelectedListe
 		spin.setAdapter(aa);
 		spin.setSelection(0);    
 		
-		String modalità[] = {"[Vendo]", "[Regalo]", "[Cerco]", "[Affitto]"};
+		String modalita[] = {"[Vendo]", "[Regalo]", "[Cerco]", "[Affitto]"};
         spin = (Spinner) findViewById(R.id.spinnerMode);
 		spin.setOnItemSelectedListener(this);
-        aa = new ArrayAdapter<Object>(this,android.R.layout.simple_spinner_item, modalità);
+        aa = new ArrayAdapter<Object>(this,android.R.layout.simple_spinner_item, modalita);
 		aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spin.setAdapter(aa);
 		spin.setSelection(0);	
