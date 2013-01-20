@@ -145,26 +145,29 @@ public class DettagliPersonali extends Activity
     	int idLayout; 
         for(int i=0; i<frasi.length; i++)
         {
-        	v = frasi[i] + global.getDettaglioPersonale(i);
-        	txtTv = new TextView(this);
-        	txtTv.setId(i);
-        	txtTv.setTextAppearance(getApplicationContext(), R.style.whiteSmall);
-        	Spannable WordtoSpan = new SpannableString(v);      
-			WordtoSpan.setSpan(new ForegroundColorSpan(global.bordo), 0, frasi[i].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-			txtTv.setText(WordtoSpan);
-			txtTv.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+        	if(global.getDettaglioPersonale(i).length() > 0)
+        	{
+        		v = frasi[i] + global.getDettaglioPersonale(i);
+        		txtTv = new TextView(this);
+        		txtTv.setId(i);
+        		txtTv.setTextAppearance(getApplicationContext(), R.style.whiteSmall);
+        		Spannable WordtoSpan = new SpannableString(v);      
+				WordtoSpan.setSpan(new ForegroundColorSpan(global.bordo), 0, frasi[i].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+				txtTv.setText(WordtoSpan);
+				txtTv.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
         	
-        	if(i < 8) 
-        		idLayout = R.id.row1_hidden;
-        	else if(i < 13)
-        		idLayout = R.id.row2_hidden;
-        	else if(i < 18)
-        		idLayout = R.id.row3_hidden;
-        	else
-            	idLayout = R.id.row4_hidden;
+        		if(i < 8) 
+        			idLayout = R.id.row1_hidden;
+        		else if(i < 13)
+        			idLayout = R.id.row2_hidden;
+        		else if(i < 18)
+        			idLayout = R.id.row3_hidden;
+        		else
+        			idLayout = R.id.row4_hidden;
         	
-        	linearLayout = (LinearLayout)findViewById (idLayout);
-        	( (LinearLayout)linearLayout).addView(txtTv);
+        		linearLayout = (LinearLayout)findViewById (idLayout);
+        		( (LinearLayout)linearLayout).addView(txtTv);
+        	}
         }
     }
     

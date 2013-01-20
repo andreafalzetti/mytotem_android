@@ -312,10 +312,9 @@ public class StudentLogin extends Activity {
         	asyncHttp = new AsyncHttp();
         	asyncHttp.execute(httpRequest);
         	global.waitAsyncTask(asyncHttp, 10); // Timeout 10 seconds
-        	response = httpRequest.getResponse();
+        	response = httpRequest.getResponse();        	        
         	estrapolaDettagliPersonali(response);
-           
-        
+                   
         	textTochange = "LOGIN-OK";
         	msg = new Message();
         	msg.obj = textTochange;
@@ -421,9 +420,9 @@ public class StudentLogin extends Activity {
     					   "CAP",
     					   "", // Telefono
     					   "Matricola",
-    					   "Passaggio di corso effettuato l' AAA",
-    					   "Facolt&agrave; di provenienza",
-    					   "Corso di provenienza",
+    					   "Passaggio di corso effettuato l' AAA", // OPZIONALE: NON TUTTI CE L'HANNO
+    					   "Facolt&agrave; di provenienza",        // OPZIONALE: NON TUTTI CE L'HANNO
+    					   "Corso di provenienza",                 // OPZIONALE: NON TUTTI CE L'HANNO
     					   "Facolt&agrave;",
     					   "Corso",
     					   "Tipologia",
@@ -440,13 +439,21 @@ public class StudentLogin extends Activity {
     		if(inizio[i].length() > 0)
     		{
     			pos1 = html.indexOf(inizio[i]);
-    			pos2 = html.substring(pos1).indexOf(s2) + s2.length();
-    			//Log.v("Debug", "Inizio taglio = " + pos1+pos2);
-    			//Log.v("Debug", "Fine taglio = " + pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
-    			tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
-    			if(global.debug) Log.v("Dettaglio", inizio[i] + " -> " + tmp);
-    			global.setDettaglioPersonale(i, tmp);
-    			html = html.substring(pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
+    			if(pos1 != -1)
+    			{
+    			   pos2 = html.substring(pos1).indexOf(s2) + s2.length();
+    			   //Log.v("Debug", "Inizio taglio = " + pos1+pos2);
+    			   //Log.v("Debug", "Fine taglio = " + pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
+    			   tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
+    			   if(global.debug) Log.v("Dettaglio", inizio[i] + " -> " + tmp);
+    			   global.setDettaglioPersonale(i, tmp);
+    			   html = html.substring(pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
+    			}
+    			else {
+    				 tmp = "";
+    				 Log.v("Dettaglio", inizio[i] + " -> " + tmp);		
+    				 global.setDettaglioPersonale(i, tmp);
+    			}
     		}
     	}
     	
