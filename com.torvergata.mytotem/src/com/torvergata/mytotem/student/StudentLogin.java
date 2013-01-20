@@ -202,10 +202,10 @@ public class StudentLogin extends Activity {
         public void handleMessage(Message msg) {
         	
             String text = (String)msg.obj;
-            Log.v("MESSAGGIO RICEVUTO", text);
+            if(global.debug) Log.v("MESSAGGIO RICEVUTO", text);
             if(text.equals("LOGIN-OK"))
             {
-            	Log.v("User login", "Login Successfull");
+            	if(global.debug) Log.v("User login", "Login Successfull");
             	pDialog.dismiss();
             	global.setLoggedState(true);
             	Intent i = new Intent(StudentLogin.this, ProfiloStudente.class);
@@ -214,13 +214,13 @@ public class StudentLogin extends Activity {
             else if(text.equals("LOGIN-FAIL"))
             {
             	pDialog.dismiss();
-            	Log.v("User login", "Login Failed");
+            	if(global.debug) Log.v("User login", "Login Failed");
             	Toast.makeText(getApplicationContext(), "Non è stato possibile eseguire il login. Ricontrollare Matiricola e Password. Ricordiamo che nella fascia d'orario 00:00 1:30 il Totem non è raggiungibile.", Toast.LENGTH_LONG).show();
             }
             else
             
             {
-            	Log.v("Cambio pDialog", "Message->"+text);
+            	if(global.debug) Log.v("Cambio pDialog", "Message->"+text);
             	pDialog.setMessage(text);
             }
             	
@@ -252,7 +252,7 @@ public class StudentLogin extends Activity {
         String response = httpRequest.getResponse();
         if(response.indexOf("Inserisci Login e Password") > 0 || response.indexOf("CCD Pagina Errore") > 0)
         {
-        	Log.v("LOGIN", "LOGIN-FAIL!!!!!");
+        	if(global.debug) Log.v("LOGIN", "LOGIN-FAIL!!!!!");
         	textTochange = "LOGIN-FAIL";
             msg = new Message();
         	msg.obj = textTochange;
@@ -263,7 +263,7 @@ public class StudentLogin extends Activity {
 
         if(STOP == false)
         {
-        	Log.v("LOGIN", "Accedo");
+        	if(global.debug) Log.v("LOGIN", "Accedo");
         	
         	if(global.debug) Log.v("Login-Ok", "Il login è andato a buon fine");
         	// ESAMI VERBALIZZATI     
@@ -278,7 +278,7 @@ public class StudentLogin extends Activity {
         	asyncHttp.execute(httpRequest);
         	global.waitAsyncTask(asyncHttp, 30); // Timeout 10 seconds
         	response = httpRequest.getResponse();
-        	Log.v("LOGIN", response.substring(response.indexOf("LOGOUT")));
+        	if(global.debug) Log.v("LOGIN", response.substring(response.indexOf("LOGOUT")));
         	getEsamiVerbalizzati(response);
         	getRendimento(response);
         
@@ -322,105 +322,6 @@ public class StudentLogin extends Activity {
         	mHandler.sendMessage(msg);
         	
         }
-        
-        
-        /*
-         * return true;
-    	
-    	
-    	httpclient = new DefaultHttpClient();
-
-        HttpPost httppost = new HttpPost(global.getURL("login"));
-        try {
-        	
-          
-        	
-            List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("login", matricola));
-            nameValuePairs.add(new BasicNameValuePair("password", password));
-            nameValuePairs.add(new BasicNameValuePair("language", "IT"));
-            nameValuePairs.add(new BasicNameValuePair("entra", "Entra"));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
- 
-            // Execute HTTP Post Request
-            HttpResponse response = httpclient.execute(httppost);
-            String str = inputStreamToString(response.getEntity().getContent()).toString();
-            if(str.indexOf("Inserisci Login e Password") > 0) return false;
-            if(str.indexOf("CCD Pagina Errore") > 0) return false;
-            
-            HttpGet httpget = new HttpGet(global.getURL("esami_verbalizzati"));
-            response = httpclient.execute(httpget);
-            str = inputStreamToString(response.getEntity().getContent()).toString();
-            getEsamiVerbalizzati(str);
-            if(global.debug) Log.v("INFO", "Nome = " + getStudentName(str)); 
-            if(global.debug) Log.v("INFO", "Corso di laurea = "+ getCorsoDiLaurea(str)); 
-           
-            // Prenotazioni attive/vecchie
-            httpget = new HttpGet(global.getURL("prenotazioni"));         
-            response = httpclient.execute(httpget);
-            str = inputStreamToString(response.getEntity().getContent()).toString();
-            getPrenotazioni(str.substring(str.indexOf("<form method=")));
-            
-            // Dettagli personali
-            getDettagliPersonali();
-            
-            
-            // Esami prenotabili
-            
-          
-            // Richiesta GET
-            String url = "https://delphi.uniroma2.it/totem/jsp/prenotazioni/menuPrenotazioni.jsp?Entra=preVisualizzaPrenotabiliEmail.jsp";
-            httpget = new HttpGet(url);
-            response = httpclient.execute(httpget);
-            str = inputStreamToString(response.getEntity().getContent()).toString();
-            Log.v("PROVA", str);
-            
-            
-            // Richiesta POST invio l'email
-            url = "https://delphi.uniroma2.it/totem/jsp/prenotazioni/preVisualizzaPrenotabiliEmail.jsp";
-            
-            httppost = new HttpPost(url);
-            nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("email", "LUCRE-GECO@HOTMAIL.IT"));
-            nameValuePairs.add(new BasicNameValuePair("avanti", "Avanti"));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            response = httpclient.execute(httppost);
-            str = inputStreamToString(response.getEntity().getContent()).toString();
-            Log.v("PROVA", str);
-            
-            // Ricerco per ordine alfabetico
-            url = "https://delphi.uniroma2.it/totem/jsp/prenotazioni/preVisualizzaPrenotabili.jsp";
-            httppost = new HttpPost(url);
-            nameValuePairs = new ArrayList<NameValuePair>(2);
-            nameValuePairs.add(new BasicNameValuePair("tipo", "1"));
-            nameValuePairs.add(new BasicNameValuePair("esame", ""));
-            nameValuePairs.add(new BasicNameValuePair("docente", ""));
-            nameValuePairs.add(new BasicNameValuePair("mostra", "Avanti"));
-            nameValuePairs.add(new BasicNameValuePair("clic", ""));
-            httppost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-            response = httpclient.execute(httppost);
-            str = inputStreamToString(response.getEntity().getContent()).toString();
-            Log.v("PROVA", str);
-            
-            // Termino la sessione HTTP
-            
-            url = "http://mytotem.torengine.it/appcontents/insert.php";
-            httpget = new HttpGet(url);
-            response = httpclient.execute(httpget);
-            str = inputStreamToString(response.getEntity().getContent()).toString();
-            Log.v("PROVA", "##########################################################################" + str);
-            
-            httpclient.getConnectionManager().shutdown();  
-            
-        } catch (ClientProtocolException e) {
-        	if(global.debug) Log.v("ERRORE", "Errore " + e.toString());
-        	e.printStackTrace();
-        } catch (IOException e) {
-        	if(global.debug) Log.v("ERRORE", "Errore " + e.toString());
-        	e.printStackTrace();
-        }
-        
-        return true;*/
     } 
     
     public void getRendimento(String html)
@@ -436,7 +337,7 @@ public class StudentLogin extends Activity {
     	int    pos1     = html.indexOf(paletto1),
     		   pos2     = html.indexOf(paletto2);
     	html = html.substring(pos1, pos2);
-    	Log.v("Rendimento-HTML", "HTML = " +html);
+    	if(global.debug) Log.v("Rendimento-HTML", "HTML = " +html);
     	
     	// Rendimento è una matrice così composta:
     	// Nome Campo - Valore
@@ -461,7 +362,7 @@ public class StudentLogin extends Activity {
     		rendimento[i][1] = html.substring(pos1, (pos1+pos2));
     		if(global.debug) Log.v("Rendimento-Val", frasi[i] + "-> " + rendimento[i][1]);
     		html = html.substring(pos1+pos2+paletto2.length());
-    		Log.v("Rendimento-HTML", "HTML = " +html);
+    		if(global.debug) Log.v("Rendimento-HTML", "HTML = " +html);
     	}
     	paletto1 = "</B>:</B> ";
     	paletto2 = "</td>"; // questo paletti valgno il 5 elemento
@@ -543,7 +444,7 @@ public class StudentLogin extends Activity {
     			//Log.v("Debug", "Inizio taglio = " + pos1+pos2);
     			//Log.v("Debug", "Fine taglio = " + pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
     			tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
-    			Log.v("Dettaglio", inizio[i] + " -> " + tmp);
+    			if(global.debug) Log.v("Dettaglio", inizio[i] + " -> " + tmp);
     			global.setDettaglioPersonale(i, tmp);
     			html = html.substring(pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
     		}
@@ -566,7 +467,7 @@ public class StudentLogin extends Activity {
     		pos1 = html.indexOf(inizio2[i]);
     		pos2 = html.substring(pos1).indexOf(s2) + s2.length();
     		tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</td>"));
-    		Log.v("Dettaglio", inizio2[i] + " -> " + tmp);
+    		if(global.debug) Log.v("Dettaglio", inizio2[i] + " -> " + tmp);
     		global.setDettaglioPersonale(idMancanti[i], tmp);
     		html = html.substring(pos1+pos2+html.substring(pos1+pos2).indexOf("\""));
 
@@ -577,9 +478,9 @@ public class StudentLogin extends Activity {
     public void getDettagliPrenotazioni(int position)
     {
     	
-    		Log.v("Dettagli Prenotazione", "Richiesta di dettaglio per prenotazione["+position+"]");
+    	    if(global.debug) Log.v("Dettagli Prenotazione", "Richiesta di dettaglio per prenotazione["+position+"]");
     		int dim = global.getNumCampiPrenotazione();
-    		Log.v("Dim ", "dim campi prenotazioni = " + dim);
+    		if(global.debug) Log.v("Dim ", "dim campi prenotazioni = " + dim);
     		
     		String ordine = global.getPrenotazioniCol(dim-1)[position];
     		String idPrenotazione = global.getPrenotazioniCol(dim-3)[position];
@@ -587,8 +488,7 @@ public class StudentLogin extends Activity {
     		if(attiva.equals("attiva")) attiva = "1";
     		else attiva = "0";
     		// Prendo i dettagli delle prenotazioni
-            
-    		
+                		
     		String textTochange = "Lettura.. Dettagli prenotazione [" + position + "]";
             Message msg = new Message();
         	msg.obj = textTochange;
@@ -602,7 +502,14 @@ public class StudentLogin extends Activity {
             httpRequest.addParam("idPrenotazioneSeguita", idPrenotazione);
             httpRequest.addParam("indexPrenotazione", ""+position);
             httpRequest.addParam("azione", "Dettagli");
-            
+            httpRequest.addParam("com_doc", "");
+            /*
+            Log.v("Parametri", "attiva = " + attiva);
+            Log.v("Parametri", "ordine = " + ordine);
+            Log.v("Parametri", "idPrenotazioneSeguita = " + idPrenotazione);
+            Log.v("Parametri", "indexPrenotazione = " + position);
+            Log.v("Parametri", "azione = Dettagli");
+            */
             AsyncHttp asyncHttp = new AsyncHttp();
             asyncHttp.execute(httpRequest);
             global.waitAsyncTask(asyncHttp, 10);
@@ -635,11 +542,11 @@ public class StudentLogin extends Activity {
     	for(int i=0; i<inizio.length; i++)
     	{
     		pos1 = html.indexOf(inizio[i]);
-    		Log.v("Debug", "pos1 = " + pos1);
+    		if(global.debug) Log.v("Debug", "pos1 = " + pos1);
     		pos2 = html.substring(pos1).indexOf(s2) + s2.length();
-    		Log.v("Debug", "pos2 = " + pos2);
+    		if(global.debug) Log.v("Debug", "pos2 = " + pos2);
     		tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</b>"));
-    		Log.v("Dettaglio", inizio[i] + " -> " + tmp);
+    		if(global.debug) Log.v("Dettaglio", inizio[i] + " -> " + tmp);
     		dettagli[i] = tmp;
     		global.setCampoDettagliPrenotazione(position, i, tmp);
     	}
@@ -665,13 +572,13 @@ public class StudentLogin extends Activity {
  
     public void getPrenotazioni(String html)
     {
-    	Log.v("Prenotazioni", "Inizio");
+    	if(global.debug) Log.v("Prenotazioni", "Inizio");
     	List<List<String>> prenotazioni = new ArrayList<List<String>>();
     	
     	String s = "<form method=",s2 = "Ristampa";
     	String tmp;    	
     	int pos1,pos2,i=0;
-    	Log.v("Prenotazioni", "primapos= " + html);
+    	if(global.debug) Log.v("Prenotazioni", "primapos= " + html);
     	if(html.length() > 0)
     	{
     		while(html.indexOf(s) >= 0)
@@ -743,7 +650,7 @@ public class StudentLogin extends Activity {
     	tmp = htmlRow.substring(htmlRow.indexOf(s)+s.length());
     	tmp = tmp.substring(0, tmp.indexOf("\""));
     	prenotazione[i] = tmp;
-    	Log.v("Prenotazione", "Valore ["+i+"]-> " + prenotazione[i]);
+    	if(global.debug) Log.v("Prenotazione", "Valore ["+i+"]-> " + prenotazione[i]);
     	
     	
     	// Prendo l'id della prenotazione
@@ -751,7 +658,7 @@ public class StudentLogin extends Activity {
     	if(htmlRow.indexOf("green") > 0)  prenotazione[i] = "attiva";
     	else if(htmlRow.indexOf("red") > 0)  prenotazione[i] = "disattiva";
     	else prenotazione[i] = "Errore";
-    	Log.v("Prenotazione", "Valore ["+i+"]-> " + prenotazione[i]);
+    	if(global.debug) Log.v("Prenotazione", "Valore ["+i+"]-> " + prenotazione[i]);
     	
     	// Prendo l'ordine della prenotazione
     	i= dim-1;
@@ -759,7 +666,7 @@ public class StudentLogin extends Activity {
     	tmp = htmlRow.substring(htmlRow.indexOf(s)+s.length());
     	tmp = tmp.substring(0, tmp.indexOf("\""));
     	prenotazione[i] = tmp;
-    	Log.v("Prenotazione", "Valore ["+i+"]-> " + prenotazione[i]);
+    	if(global.debug) Log.v("Prenotazione", "Valore ["+i+"]-> " + prenotazione[i]);
     	
     	// Per inviare il form (annulla etc) devo salvarmi:
     	// idPrenotazioneSeguita, indexPrenotazione
@@ -767,7 +674,7 @@ public class StudentLogin extends Activity {
     	ArrayList<String> res = new ArrayList<String>();
     	for(int k=0; k<dim; k++)
     	{
-    		Log.v("Copia", "dim="+k+" valore->"+prenotazione[k]);
+    		if(global.debug) Log.v("Copia", "dim="+k+" valore->"+prenotazione[k]);
     		res.add(prenotazione[k]);
     	}
     	return res;
@@ -801,7 +708,7 @@ public class StudentLogin extends Activity {
     
     public void getEsamiVerbalizzati(String html)
     {
-    	Log.v("Esami verbalizzati" , "entro in esami verbalizzati");
+    	if(global.debug) Log.v("Esami verbalizzati" , "entro in esami verbalizzati");
     	String s,s2;
     	String tmp;
     	if(html.length() > 0)
@@ -828,20 +735,14 @@ public class StudentLogin extends Activity {
     		//while(htmlNew.indexOf("<tr>") >= 0)
     		while(i<numEsami)
     		{
-    			//try
-    			//{
-    			Log.v("COLH", htmlNew);
-    			Log.v("COLH", "########################################");
+    			if(global.debug) Log.v("COLH", htmlNew);
+    			if(global.debug) Log.v("COLH", "########################################");
     			campo = estrapolaColonna(htmlNew);
     			global.setCampoEsameVerbalizzato(i, j, campo);
-    			Log.v("INFO", campo);
+    			if(global.debug) Log.v("INFO", campo);
     			htmlNew = htmlNew.substring(htmlNew.indexOf("</td>") + 5);
     			j++;
-    			if(j==10) {i++; j=0; }
-    			/*} catch(Exception e)
-    			{
-    				//e.printStackTrace();
-    			}*/
+    			if(j==global.getColonneEsami()) {i++; j=0; }
     		}
     	}
     }
@@ -854,7 +755,7 @@ public class StudentLogin extends Activity {
     	String s2 = "</td>";
 		int pos1 = rigaHtml.indexOf(s);
 		int pos2 = rigaHtml.substring(pos1).indexOf(s2);
-		Log.v("EstrapolaColonna", "pos1="+pos1 + ", pos2="+pos2);
+		if(global.debug) Log.v("EstrapolaColonna", "pos1="+pos1 + ", pos2="+pos2);
 		return rigaHtml.substring(pos1+s.length(), pos1+pos2);
     	}
     	catch (Exception e)

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,15 +49,19 @@ public class ReportEsame extends Activity implements OnClickListener
         idCampiEsame[3] = R.id.aaEsame;
         idCampiEsame[4] = R.id.ssdEsame;
         idCampiEsame[5] = R.id.cfuEsame;
+        idCampiEsame[6] = R.id.riconosciutoDa;
+        idCampiEsame[7] = R.id.cfuOrig;
+        idCampiEsame[8] = R.id.votoOrig;
+        idCampiEsame[9] = R.id.dataOrig;
         
-        String frasi[] = {"", "", "Data: ", "A.A: ", "SSD: ", "CFU: " };
-        int positioniColonne[] = {1, 6, 4, 3, 2, 5};
+        String frasi[] = {"", "", "Data: ", "A.A: ", "SSD: ", "CFU: ", "Riconosciuto da: ", "CFU orig: ", "Voto orig: ", "Data orig: " };
+        int posizioniColonne[] = {1, 6, 4, 3, 2, 5, 9, 10, 11, 12};
         
         campiEsame = new TextView[esame.length];
-        
-        for(int i=0; i<6; i++)
+        Log.v("ReportEsame", "campiEsame = " + campiEsame);
+        for(int i=0; i<10; i++)
         {
-        	String s = frasi[i] + global.getEsamiCol(positioniColonne[i])[position];
+        	String s = frasi[i] + global.getEsamiCol(posizioniColonne[i])[position];
         	campiEsame[i] = (TextView) findViewById(idCampiEsame[i]);
         	if(i>1)
         	{
@@ -78,6 +83,10 @@ public class ReportEsame extends Activity implements OnClickListener
         campiEsame[3].setTypeface(face);
         campiEsame[4].setTypeface(face);
         campiEsame[5].setTypeface(face);
+        campiEsame[6].setTypeface(face);
+        campiEsame[7].setTypeface(face);
+        campiEsame[8].setTypeface(face);
+        campiEsame[9].setTypeface(face);
     }
     
 	public void onClick(View v) {

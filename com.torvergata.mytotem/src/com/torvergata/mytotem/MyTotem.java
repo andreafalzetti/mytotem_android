@@ -89,7 +89,7 @@ public class MyTotem extends Application {
 				   corso;
 	private int numEsamiValidi;
 	private String[][] esami_verbalizzati;
-	private int colonneCampiEsame = 10;
+	private int colonneCampiEsame = 13;
 	
 	// Prenotazioni
 	@SuppressWarnings("unused")
@@ -230,8 +230,7 @@ public class MyTotem extends Application {
 	{
 		if(debug) Log.v("Inserimento campo", "[" + row + "][" + col + "] -> " + value);
 		esami_verbalizzati[row][col] = value;
-	}
-	
+	}	
 	
 	public void setNumEsamiValidi(int n)
 	{
@@ -301,6 +300,7 @@ public class MyTotem extends Application {
 	public int getNumCampiDettagliPrenotazione() { return colonneCampiDettagliPrenotazioni; }
 	public int getNumCampiDettagliPersonali() { return colonneCampiDatiPersonali; }
 	public String[][] getRendimento() { return RENDIMENTO; }
+	public int getColonneEsami() { return colonneCampiEsame; }
 	public String[] getFacolta()
 	{
 		if(debug) Log.v("Debuggo", "Dimensione matrice facoltà = " + OF_facoltà.length);
@@ -1262,6 +1262,11 @@ public class MyTotem extends Application {
 		  intent.setData(Uri.parse("market://details?id=com.torvergata.mytotem"));
 		  intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		  startActivity(intent);
+	}
+	
+	public void cleanPreferences()
+	{
+		mPreferences.edit().remove("lastVersionRan").commit();
 	}
 	
 	public void loadPreferences(Context c)

@@ -29,6 +29,7 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -80,11 +81,11 @@ public class ProfiloStudente extends Activity {
         mainListView.setCacheColorHint(global.sfondo);
         
         mainListView.setOnItemClickListener(new OnItemClickListener() 
-        {
-        	Intent i;
+        {        	
         	public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
         	{
-        		Log.v("CLICK", "ID="+position);
+        		Intent i = null;
+        		if(global.debug) Log.v("CLICK", "ID="+position);
         		if(position == 0)
         		{
         			// Dati personali
@@ -112,8 +113,9 @@ public class ProfiloStudente extends Activity {
         		}
         		else if(position == 5)
         		{
-        			// Calendario esami
-        			i = new Intent(ProfiloStudente.this, CalendarioEsamiFilterSelection.class);
+        			msgLavoriInCorso();
+        			// Calendario esami        			
+        			//i = new Intent(ProfiloStudente.this, CalendarioEsamiFilterSelection.class);
         		}
         		//else i = new Intent(ProfiloStudente.this, Home.class);
         		
@@ -125,7 +127,12 @@ public class ProfiloStudente extends Activity {
             	}
         	}
         });
-    }    
+    }  
+    
+    public void msgLavoriInCorso()
+    {
+    	Toast.makeText(getApplicationContext(), "Attualmente in fase di sviluppo! Assicurati di scaricare i prossimi aggiornamenti dell'app per scoprire se la funzione è stata introdotta!", Toast.LENGTH_SHORT).show();
+    }
     
 	private void cambiaListView(ListView lw, String[] lista, String[] descrizioni, int [] photos)
 	{

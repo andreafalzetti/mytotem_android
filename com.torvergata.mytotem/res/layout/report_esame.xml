@@ -102,6 +102,38 @@ android:background="#008a63"
             android:gravity="left"
             android:text="N.CFU"
             style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/riconosciutoDa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:gravity="left"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/cfuOrig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:gravity="left"
+            style="@style/whiteMed" />  
+       <TextView
+        	android:id="@+id/votoOrig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:gravity="left"
+            style="@style/whiteMed" />  
+        <TextView
+        	android:id="@+id/dataOrig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:clickable="false"
+            android:gravity="left"
+            style="@style/whiteMed" />  
 </LinearLayout>
 
 </RelativeLayout>

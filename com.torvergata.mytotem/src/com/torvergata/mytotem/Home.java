@@ -60,6 +60,8 @@ public class Home extends Activity {
         global = ((MyTotem) this.getApplication()); 
         global.eliminaVecchiaCartella();
         global.loadPreferences(Home.this);
+        // global.cleanPreferences();
+        
         // NEl caso di aggiornamento, mostra il log con le nuove funzionalità.
         if(global.checkIfNewAppVersion())
         	showNewFeatures();
@@ -350,12 +352,15 @@ public class Home extends Activity {
    public void showNewFeatures()
    {
 	   String log = "";
+	   log += "[Bug Risolti]\n";
+	   log += "- risolti problemi di lettura delle prenotazioni\n";
+	   log += "- risolti problemi di lettura degli esami verbalizzati\n";
+	   log += "\n\nL'applicazione si limita a leggere i contenuti (esami, voti etc) dal sito ufficiale, nel caso in cui quest'ultimo subisce modifiche l'app ne risente, non funzionando correttamente.";
+	   log += "\n\n[Novità in arrivo]\n";
 	   log += "- Calendario Esami\n";
-	   log += "- Mercatino annunci per scambio e vendita tra studenti di Tor Vergata\n";
-	   log += "- Modifiche grafiche\n";
-	   log += "- Correzioni e miglioramenti vari\n";
-	   log += "\n\nPer qualsiasi info o commento: afalzettidroid@gmail.com\n";
-	   log += "[Versione: 2.2]\n";
+	   log += "- Mercatino annuncio esclusivo tra studenti di Tor Vergata\n";
+	   log += "\nPer qualsiasi segnalazione, info o commento: afalzettidroid@gmail.com\n";
+	   log += "[Versione: 2.3]\n";
 	   
 	   final Dialog dialog = new Dialog(Home.this);
 	   dialog.setContentView(R.layout.alert_dialog);
