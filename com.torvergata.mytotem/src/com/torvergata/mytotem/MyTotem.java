@@ -64,8 +64,8 @@ import android.widget.Toast;
 
 public class MyTotem extends Application {
 	//public HttpRequest loginHandler;
-	public String AppVersion = "2.2"; // Versione dell'App - Serve per mostrare il log delle modifiche
-	public boolean debug = true; // Disabilita/Abilita i Log
+	public String AppVersion = "2.3.1"; // Versione dell'App - Serve per mostrare il log delle modifiche
+	public boolean debug = false; // Disabilita/Abilita i Log
 	public boolean ADV = true; // Disabilita/Abilita la pubblicità all'interno dell'APP
 	public String deviceID = "3782c0a039abff53"; // DeviceID di TEST per AdMob
 	public String admobID = "a15059c769ecd30"; // AdMob Key	
@@ -88,6 +88,7 @@ public class MyTotem extends Application {
 				   password,
 				   corso;
 	private int numEsamiValidi;
+	private int numEsamiIdonei;
 	private String[][] esami_verbalizzati;
 	private int colonneCampiEsame = 13;
 	
@@ -193,7 +194,7 @@ public class MyTotem extends Application {
 		SiteURL.put("dati_personali",                   "https://delphi.uniroma2.it/totem/jsp/Iscrizioni/datiStudente.jsp");
 		SiteURL.put("prenota-esami1",                   "https://delphi.uniroma2.it/totem/jsp/prenotazioni/preVisualizzaPrenotabiliEmail.jsp");
 		SiteURL.put("prenota-esami2",                   "https://delphi.uniroma2.it/totem/jsp/prenotazioni/preVisualizzaPrenotabili.jsp");
-		SiteURL.put("prenotazioni",                     "https://delphi.uniroma2.it/totem/jsp/prenotazioni/submenuPrenotazioni.jsp?Entra=visualizzaPrenotazioni.jsp&attiva=no");
+		SiteURL.put("prenotazioni",                     "https://delphi.uniroma2.it/totem/jsp/prenotazioni/submenuPrenotazioni.jsp?Entra=visualizzaPrenotazioni.jsp&attiva=si");
 		SiteURL.put("dettagli_prenotazioni",            "https://delphi.uniroma2.it/totem/jsp/prenotazioni/visualizzaPrenotazioni.jsp");
 		SiteURL.put("insert-ad",                        "http://mytotem.torengine.it/appcontents/index.php");
 		SiteURL.put("sito",                             "http://mytotem.torengine.it");
@@ -237,6 +238,10 @@ public class MyTotem extends Application {
 		numEsamiValidi = n; 
 		esami_verbalizzati = new String[n][colonneCampiEsame];
 		if(debug) Log.v("Matrice Esami", "DIM = " + n + "x" + colonneCampiEsame);	
+	}
+	public void setNumIdoneita(int n)
+	{
+		numEsamiIdonei = n;
 	}
 	
 
@@ -295,6 +300,7 @@ public class MyTotem extends Application {
 	public boolean isLogged()       	 { return logged; }	
 	public File     getAppDir()			 { return appFilesDirectory; }
 	public int getNumEsamiValidi()       { return numEsamiValidi; }
+	public int getNumIdoneita()          { return numEsamiIdonei; }
 	public String getURL(String s)       { return (String) SiteURL.get(s); }	
 	public int getNumCampiPrenotazione() { return colonneCampiEsamiPrenotati; }
 	public int getNumCampiDettagliPrenotazione() { return colonneCampiDettagliPrenotazioni; }

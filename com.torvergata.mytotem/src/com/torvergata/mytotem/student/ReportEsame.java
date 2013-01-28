@@ -53,29 +53,39 @@ public class ReportEsame extends Activity implements OnClickListener
         idCampiEsame[7] = R.id.cfuOrig;
         idCampiEsame[8] = R.id.votoOrig;
         idCampiEsame[9] = R.id.dataOrig;
-        
-        String frasi[] = {"", "", "Data: ", "A.A: ", "SSD: ", "CFU: ", "Riconosciuto da: ", "CFU orig: ", "Voto orig: ", "Data orig: " };
-        int posizioniColonne[] = {1, 6, 4, 3, 2, 5, 9, 10, 11, 12};
-        
+        Typeface face=Typeface.createFromAsset(getAssets(),"fonts/Chunkfive.otf");
+        String frasi[] = {"", "", "Data: ", "A.A: ", "SSD: ", "CFU: ", "N° Verbale: ", "Riconosciuto da: ", "CFU orig: ", "Voto orig: ", "Data orig: ", "Note: "};
+        int posizioniColonne[] = {1, 6, 4, 3, 2, 5, 8, 9, 10, 11, 12, 7};
         campiEsame = new TextView[esame.length];
         Log.v("ReportEsame", "campiEsame = " + campiEsame);
         for(int i=0; i<10; i++)
         {
-        	String s = frasi[i] + global.getEsamiCol(posizioniColonne[i])[position];
-        	campiEsame[i] = (TextView) findViewById(idCampiEsame[i]);
-        	if(i>1)
+        	if(global.getEsamiCol(posizioniColonne[i])[position].length() > 0)
         	{
-        		Spannable WordtoSpan = new SpannableString(s);      
-        		WordtoSpan.setSpan(new ForegroundColorSpan(global.bordo), 0, frasi[i].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        		campiEsame[i].setText(WordtoSpan);
-        	}
-        	else
-        	{
-        		campiEsame[i].setText(s);
+        		String s = frasi[i] + global.getEsamiCol(posizioniColonne[i])[position];
+        		campiEsame[i] = (TextView) findViewById(idCampiEsame[i]);
+        		if(i>1)
+        		{
+        			Spannable WordtoSpan = new SpannableString(s);      
+        			WordtoSpan.setSpan(new ForegroundColorSpan(global.bordo), 0, frasi[i].length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        			campiEsame[i].setText(WordtoSpan);
+        		}
+        		else
+        		{
+        			campiEsame[i].setText(s);
+        		}
+        		
+        		if(i==2)
+        		{
+        			face=Typeface.createFromAsset(getAssets(),"fonts/Aller_Bd.ttf");
+        		}
+        		campiEsame[i].setTypeface(face);
         	}
         }
         
-        Typeface face=Typeface.createFromAsset(getAssets(),"fonts/Chunkfive.otf");
+        
+        /*
+        face=Typeface.createFromAsset(getAssets(),"fonts/Chunkfive.otf");
         campiEsame[0].setTypeface(face);
         campiEsame[1].setTypeface(face);
         face=Typeface.createFromAsset(getAssets(),"fonts/Aller_Bd.ttf");
@@ -87,6 +97,7 @@ public class ReportEsame extends Activity implements OnClickListener
         campiEsame[7].setTypeface(face);
         campiEsame[8].setTypeface(face);
         campiEsame[9].setTypeface(face);
+        */
     }
     
 	public void onClick(View v) {

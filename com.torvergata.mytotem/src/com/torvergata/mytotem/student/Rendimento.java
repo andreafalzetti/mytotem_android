@@ -43,7 +43,6 @@ public class Rendimento extends Activity {
         Typeface face=Typeface.createFromAsset(getAssets(),"fonts/Aller_Bd.ttf");
         int style_Title = R.style.whiteMed;
         int style_Message = R.style.blackMed;
-        String domanda, risposta;
         
         String rendimento[][] = global.getRendimento();
         int row = rendimento.length,

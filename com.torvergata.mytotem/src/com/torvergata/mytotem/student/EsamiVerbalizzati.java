@@ -47,7 +47,7 @@ public class EsamiVerbalizzati extends Activity implements OnClickListener
         //Bundle extras = getIntent().getExtras();
         // Da qui prendo variabili e metodi globali all'app
         global = ((MyTotem) this.getApplication());
-        global.parseXMLOffertaFormativa();
+        //global.parseXMLOffertaFormativa();
         // oggetto ListView
         mainListView = (ListView) findViewById(R.id.mainListView);  
         mainListView.setCacheColorHint(global.sfondo);

@@ -282,8 +282,6 @@ public class StudentLogin extends Activity {
         	getEsamiVerbalizzati(response);
         	getRendimento(response);
         
-        	
-        
         	// PRENOTAZIONI
         	textTochange = "Lettura.. Prenotazioni";
         	msg = new Message();
@@ -314,7 +312,8 @@ public class StudentLogin extends Activity {
         	global.waitAsyncTask(asyncHttp, 10); // Timeout 10 seconds
         	response = httpRequest.getResponse();        	        
         	estrapolaDettagliPersonali(response);
-                   
+
+        	
         	textTochange = "LOGIN-OK";
         	msg = new Message();
         	msg.obj = textTochange;
@@ -342,7 +341,7 @@ public class StudentLogin extends Activity {
     	// Nome Campo - Valore
     	// ....		  - ....	
     	String rendimento[][] = new String[5][2];
-    	String frasi[] = {"Esami validi", "Esame peggiore", "Esame migliore", "Media aritmetica", "Media ponderata"};
+    	String frasi[] = {"Esami validi e Idoneità", "Esame peggiore", "Esame migliore", "Media aritmetica", "Media ponderata"};
     	// 0 - Esami validi
     	// 1 - Esame peggiore
     	// 2 - Esame migliore
@@ -359,6 +358,8 @@ public class StudentLogin extends Activity {
     		if(global.debug) Log.v("Rendimento-Cut", "Estrapolo String da pos1="+pos1 + " a " + (pos1+pos2));
     		rendimento[i][0] = frasi[i];
     		rendimento[i][1] = html.substring(pos1, (pos1+pos2));
+    		if(i==0)
+    			rendimento[i][1] = rendimento[i][1] + " + " + global.getNumIdoneita();
     		if(global.debug) Log.v("Rendimento-Val", frasi[i] + "-> " + rendimento[i][1]);
     		html = html.substring(pos1+pos2+paletto2.length());
     		if(global.debug) Log.v("Rendimento-HTML", "HTML = " +html);
@@ -543,19 +544,30 @@ public class StudentLogin extends Activity {
     	int dim = global.getNumCampiDettagliPrenotazione();
     	String dettagli[] = new String[dim];
     	
+    	// ciclo è opzionale non tutti glie sami ce l'hanno
     	String inizio[] = {"orario", "inizio prenotazione", "modalita", "ciclo", "edificio", "aula", "stato prenotazione", "comunicazioni"};
     	String s2 = "align=\"left\"><b>";
     	
     	for(int i=0; i<inizio.length; i++)
     	{
-    		pos1 = html.indexOf(inizio[i]);
-    		if(global.debug) Log.v("Debug", "pos1 = " + pos1);
-    		pos2 = html.substring(pos1).indexOf(s2) + s2.length();
-    		if(global.debug) Log.v("Debug", "pos2 = " + pos2);
-    		tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</b>"));
-    		if(global.debug) Log.v("Dettaglio", inizio[i] + " -> " + tmp);
-    		dettagli[i] = tmp;
-    		global.setCampoDettagliPrenotazione(position, i, tmp);
+    		try
+    		{
+    			pos1 = html.indexOf(inizio[i]);
+    			if(global.debug) Log.v("Debug", "pos1 = " + pos1);
+    			pos2 = html.substring(pos1).indexOf(s2) + s2.length();
+    			if(global.debug) Log.v("Debug", "pos2 = " + pos2);
+    			tmp  = html.substring(pos1+pos2, pos1+pos2+html.substring(pos1+pos2).indexOf("</b>"));
+    			if(global.debug) Log.v("Dettaglio", inizio[i] + " -> " + tmp);
+    			dettagli[i] = tmp;
+    			global.setCampoDettagliPrenotazione(position, i, tmp);
+    		}
+    		catch (Exception e)
+    		{
+    			tmp = "";
+    			dettagli[i] = tmp;
+    			global.setCampoDettagliPrenotazione(position, i, tmp);
+     			e.printStackTrace();
+    		}
     	}
     	
     }
@@ -590,6 +602,8 @@ public class StudentLogin extends Activity {
     	{
     		while(html.indexOf(s) >= 0)
     		{
+    			try
+    			{
     			pos1 = html.indexOf(s);
     			pos2 = html.substring(pos1).indexOf(s2);
     			tmp = html.substring(pos1, pos1+pos2);
@@ -597,6 +611,12 @@ public class StudentLogin extends Activity {
     			i++;
     			if(global.debug) Log.v("Prenotazioni", "Trovata! " + i);
     			html = html.substring(pos2);
+    			}
+    			catch (Exception e)
+    			{
+    				e.printStackTrace();
+    				break;
+    			}
     			
     		}
     	}
@@ -713,6 +733,11 @@ public class StudentLogin extends Activity {
     	return corso;
     }
     
+    public static int countOccurrences(String fonte, String trova)
+    {
+    	return fonte.split(trova, -1).length-1;                      
+    }
+    
     public void getEsamiVerbalizzati(String html)
     {
     	if(global.debug) Log.v("Esami verbalizzati" , "entro in esami verbalizzati");
@@ -724,8 +749,12 @@ public class StudentLogin extends Activity {
     		int pos1 = html.indexOf(s);
     		int pos2 = html.substring(pos1).indexOf("<br>");
     		tmp = html.substring(pos1+s.length(), pos1+pos2);
-    		int numEsami = Integer.parseInt(tmp);
-    		global.setNumEsamiValidi(numEsami);
+    		int numEsami = Integer.parseInt(tmp);    		
+    		
+    		// Conto le occorrenza della parola IDONEO per verificare il numero di idoneità
+    		int countIdoneita = countOccurrences(html, "IDONEO");
+    		global.setNumEsamiValidi(numEsami+countIdoneita);
+    		global.setNumIdoneita(countIdoneita);
     		
     		// Ora so quanti esami ha fatto lo studente.
     		// Dall'html totale estrapolo il blocco delle righe della tabella
@@ -739,31 +768,101 @@ public class StudentLogin extends Activity {
     		s = "esamidispari";
     		int i = 0; // Contatore riga (esame)
     		int j = 0; // Contatore colonna (campo)
-    		//while(htmlNew.indexOf("<tr>") >= 0)
-    		while(i<numEsami)
+
+    		while(i<numEsami+countIdoneita)
     		{
-    			if(global.debug) Log.v("COLH", htmlNew);
-    			if(global.debug) Log.v("COLH", "########################################");
-    			campo = estrapolaColonna(htmlNew);
-    			global.setCampoEsameVerbalizzato(i, j, campo);
-    			if(global.debug) Log.v("INFO", campo);
-    			htmlNew = htmlNew.substring(htmlNew.indexOf("</td>") + 5);
-    			j++;
-    			if(j==global.getColonneEsami()) {i++; j=0; }
+    			try
+    			{
+    				//Log.v("INFOx", estrapolaRigaEsame(htmlNew));
+    				Log.v("INFOx", "########################################");
+    				String tmp_htmlNew = estrapolaRigaEsame(htmlNew);
+    				estrapolaColonne(i, tmp_htmlNew);
+    				htmlNew = htmlNew.substring(htmlNew.indexOf("</tr>")+5);
+    				i++;
+    			} catch (Exception e) {
+    				// Fa schifo questo ciclo!!!
+    				e.printStackTrace();
+    				break;
+    			}
     		}
     	}
     }
     
-    public String estrapolaColonna(String rigaHtml)
+    // Dall'html della pagina estrapola la prima riga di una tabella
+    public String estrapolaRigaEsame(String html)
     {
-    	try
-    	{
+    	String s1 = "<tr>",
+    		   s2 = "</tr>";
+    	
+    	int pos1 = html.indexOf(s1),
+    		pos2 = html.substring(pos1).indexOf(s2);
+    	
+    	return html.substring(pos1, pos2+s2.length()+16);    	    
+    }
+    
+    public void estrapolaColonne(int i, String rigaHtml)
+    {
+    	boolean esame_normale = (rigaHtml.indexOf("colspan=\"4\"") == -1)?false:true;
+    	Log.v("INFOx", "NORMALE = " + esame_normale);
+    	// ci sono 10 colonne certe.
+    	// la decima potrebbe essere un colspan4 oppure essere divisa in 3 colonne
     	String s = "pari\">";
     	String s2 = "</td>";
-		int pos1 = rigaHtml.indexOf(s);
-		int pos2 = rigaHtml.substring(pos1).indexOf(s2);
-		if(global.debug) Log.v("EstrapolaColonna", "pos1="+pos1 + ", pos2="+pos2);
-		return rigaHtml.substring(pos1+s.length(), pos1+pos2);
+    	String colonnaHtml, campo;
+    	int j=0, pos1, pos2;
+    	
+    	while(rigaHtml.indexOf(s)!=-1)
+    	{
+    		//Log.v("INFOx", "i="+i+" _ j="+j);
+    		if(j<=8)
+    		{
+    			campo = estrapolaColonna(rigaHtml);
+    			global.setCampoEsameVerbalizzato(i, j, campo);
+    			if(global.debug) Log.v("INFOx", "[pos="+j+"] " + campo);
+    		}
+    		else
+    		{
+    			if(!esame_normale)
+    			{
+    				campo = estrapolaColonna(rigaHtml);
+        			global.setCampoEsameVerbalizzato(i, j, campo);
+        			if(global.debug) Log.v("INFOx", campo);
+    			}
+    			else 
+    			{
+    				campo = "";
+    				Log.v("INFOx", " 9 10 11 12 VUOTI ");
+    				global.setCampoEsameVerbalizzato(i,  9, campo);
+    				global.setCampoEsameVerbalizzato(i, 10, campo);
+    				global.setCampoEsameVerbalizzato(i, 11, campo);
+    				global.setCampoEsameVerbalizzato(i, 12, campo);
+    			}
+    		}
+    		
+    		j++;
+    		
+    		rigaHtml = rigaHtml.substring(rigaHtml.indexOf(s2) + 5);
+    		
+    	}
+    	
+    }
+    
+    public String estrapolaColonna(String rigaHtml)
+    {
+    	String s = "pari\">";
+		String s2 = "</td>";
+		int pos1,pos2;
+		String htmlSpace = "&nbsp;", tmp;
+    	try
+    	{    	
+    		pos1 = rigaHtml.indexOf(s);
+    		pos2 = rigaHtml.substring(pos1).indexOf(s2);
+    		if(global.debug) Log.v("EstrapolaColonna", "pos1="+pos1 + ", pos2="+pos2);
+    		tmp = rigaHtml.substring(pos1+s.length(), pos1+pos2);
+    		if(tmp.compareTo(htmlSpace) != 0)
+    		   return rigaHtml.substring(pos1+s.length(), pos1+pos2);
+    		else
+    			return "";
     	}
     	catch (Exception e)
     	{
