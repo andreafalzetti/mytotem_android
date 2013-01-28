@@ -64,7 +64,7 @@ import android.widget.Toast;
 
 public class MyTotem extends Application {
 	//public HttpRequest loginHandler;
-	public String AppVersion = "2.3.1"; // Versione dell'App - Serve per mostrare il log delle modifiche
+	public String AppVersion = "2.31"; // Versione dell'App - Serve per mostrare il log delle modifiche
 	public boolean debug = false; // Disabilita/Abilita i Log
 	public boolean ADV = true; // Disabilita/Abilita la pubblicità all'interno dell'APP
 	public String deviceID = "3782c0a039abff53"; // DeviceID di TEST per AdMob

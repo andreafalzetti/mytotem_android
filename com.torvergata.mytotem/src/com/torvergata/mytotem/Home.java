@@ -359,7 +359,7 @@ public class Home extends Activity {
 	   log += "- Calendario Esami\n";
 	   log += "- Mercatino annuncio esclusivo tra studenti di Tor Vergata\n";
 	   log += "\nPer qualsiasi segnalazione, info o commento: afalzettidroid@gmail.com\n";
-	   log += "[Versione: "+global.AppVersion+"]\n";
+	   log += "[Versione: 2.3.1]\n";
 	   
 	   final Dialog dialog = new Dialog(Home.this);
 	   dialog.setContentView(R.layout.alert_dialog);
